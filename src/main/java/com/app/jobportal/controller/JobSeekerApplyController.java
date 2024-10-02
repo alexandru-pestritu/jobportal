@@ -71,7 +71,7 @@ public class JobSeekerApplyController {
                         }
                     }
                     model.addAttribute("alreadyApplied", exists);
-                    model.addAttribute("alreadtSaved", saved);
+                    model.addAttribute("alreadySaved", saved);
                 }
             }
         }
@@ -103,6 +103,6 @@ public class JobSeekerApplyController {
             }
             jobSeekerApplyService.addNew(jobSeekerApply);
         }
-        return "redirect:/dashboard";
+        return "redirect:/dashboard/";
     }
 }
