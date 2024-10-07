@@ -51,4 +51,5 @@ public interface JobPostActivityRepository extends JpaRepository<JobPostActivity
             @Param("remote") List<String> remote,
             @Param("type") List<String> type,
             @Param("date") LocalDate searchDate);
+
 }

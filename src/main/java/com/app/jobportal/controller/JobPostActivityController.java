@@ -257,5 +257,12 @@ public class JobPostActivityController {
         return "add-jobs";
     }
 
+    @PostMapping("/dashboard/deleteJob/{id}")
+    public String deleteJob(@PathVariable("id") int id) {
+        JobPostActivity jobPostActivity = jobPostActivityService.getOne(id);
+        jobPostActivityService.deleteJob(jobPostActivity);
+        return "redirect:/dashboard/";
+    }
+
 
 }

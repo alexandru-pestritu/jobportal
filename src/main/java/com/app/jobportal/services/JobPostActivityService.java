@@ -49,4 +49,9 @@ public class JobPostActivityService {
     public List<JobPostActivity> getAll() {
         return jobPostActivityRepository.findAll();
     }
+
+
+    public void deleteJob(JobPostActivity jobPostActivity) {
+        jobPostActivityRepository.delete(jobPostActivity);
+    }
 }
