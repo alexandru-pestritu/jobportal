@@ -38,8 +38,8 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6">
-        <div class="myForm" style="align-items:center">
+      <div class="col-md-6" style="display:flex; align-items: center; justify-content: center;">
+        <div class="myForm" style="align-items:center; justify-content:center; width: 100%">
           <form th:action="@{/login}" th:object="${user}" method="post">
             <h1 class="text-center bold font-weight-bold mb-4">Login</h1>
             <div class="form-group">
@@ -63,16 +63,11 @@
               />
             </div>
             <div class="clearfix mb-4">
-              <label class="float-left form-check-label"
-                ><input type="checkbox" /> Remember me</label
-              >
-              <a href="#" class="color-text float-right">Forgot Password?</a>
-            </div>
             <div class="form-group">
               <button type="submit" class="myBtn">Log in</button>
             </div>
 
-            <p class="text-center">
+            <p class="text-center mt-2">
               Are you a new User?
               <a
                 class="color-text"

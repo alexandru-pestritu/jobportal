@@ -20,7 +20,7 @@
 <body>
 <header class="navbar navbar-expand-lg navbar-dark">
     <label class="mt-2 ms-5 font-weight-bold h5"
-    ><a th:href="@{/dashboard/}">jobportal</a
+    ><a th:href="@{/}">jobportal</a
     ><span class="logo_com font-weight-bold h5" style="color: white">
           .com</span
     ></label
@@ -39,33 +39,23 @@
 
     <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav m-auto mt-2 mt-lg-0">
-
-            <li class="nav-item active">
-                <a class="nav-link" th:href="@{/dashboard/}"
-                ><i class="fas fa-search"></i>Search for Jobs</a
-                >
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" th:href="@{/saved-jobs/}">
-                    <i class="fa-solid fa-eye"></i>View Saved Jobs</a>
-            </li>
-            <li class="nav-item ">
-                <a class="nav-link" th:href="@{/job-seeker-profile/}">
-                    <i class="fa-solid fa-pencil"></i>Edit Profile</a>
-            </li>
-
-
         </ul>
-
-        <label class="nav-item nav-link px-2 me-3">Guest</label>
-
-        <button class="myBtn-light me-5" onclick="window.location.href='/logout'">Logout</button>
+        <div class="logo_right" style="padding-top: 0;">
+        <label class="Candidate_login_btn" style="margin-right: 0">
+            <a th:href="@{/login}">
+                Login
+            </a>
+            <a th:href="@{/register}">
+                /Register
+            </a>
+        </label>
+        </div>
     </div>
 </header>
 <section class="section">
     <div class="sidenav px-5">
         <div>
-            <label class="text-uppercase color-dull font-weight-bold">Filter Results</label>
+            <label class="text-uppercase font-weight-bold">Filter Results</label>
             <hr/>
             <form id="myForm" th:action="@{/global-search/}">
                 <div class="row">
@@ -201,7 +191,7 @@
 
     <article>
         <div class="box">
-            <h1 class="primary-title">Dashboard</h1>
+            <h1 class="primary-title">Search Jobs</h1>
             <div class="inner">
                 <input id="job" class="radius-left" type="text" placeholder="Search for a job" name="job"
                        th:value="${job}"/>
