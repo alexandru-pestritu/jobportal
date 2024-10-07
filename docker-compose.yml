@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  spring-app:
+    image: openjdk:21
+    container_name: spring-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      DB_URL: jdbc:mysql://mysql:3306/jobportal
+      DB_USERNAME: jobportal
+      DB_PASSWORD: jobportal
+    depends_on:
+      - mysql
+    volumes:
+      - ./target/jobportal-0.0.1-SNAPSHOT.jar:/app/jobportal.jar
+    command: ["java", "-jar", "/app/jobportal.jar"]
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: jobportal
+      MYSQL_USER: jobportal
+      MYSQL_PASSWORD: jobportal
+    ports:
+      - "3307:3306"
+    volumes:
+      - mysql-data:/var/lib/mysql
+
+volumes:
+  mysql-data:
