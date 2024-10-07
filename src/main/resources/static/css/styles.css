@@ -344,6 +344,10 @@ label.large-label {
   border: none;
 }
 
+.base_button:hover {
+ background-color: #839e2e;
+}
+
 #check:checked::before {
   color: #A4C639;
   border: #A4C639;
@@ -400,7 +404,7 @@ a.color-text:hover {
   background: #A4C639;
 }
 .btn-sec.btn-black {
-  background: #191d34;
+  background: #002244;
 }
 span.title-span {
   font-size: 14px;
